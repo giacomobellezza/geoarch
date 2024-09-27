@@ -67,7 +67,7 @@ def plot_data():
             with right:
                 st.form_submit_button(label="Apply Filters", type="primary")
 
-            filters["type"] = st.multiselect("Tipo", unique_types, default=unique_types)
+            filters["type"] = st.multiselect("Type", unique_types, default=unique_types)
 
     # main
     tab1_map, tab2_data = st.tabs(["Map", "Data"])

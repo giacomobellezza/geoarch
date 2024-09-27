@@ -1,0 +1,51 @@
+# Compiled python modules.
+*.pyc
+
+# Setuptools distribution folder.
+/dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+/.eggs/
+/.cache/
+
+# VScode
+/.vscode/
+
+# Pycharm
+/.idea/
+/build/
+.DS_Store
+notebooks/.DS_Store
+
+# pytest
+.pytest_cache/
+
+# cache
+__pycache__/
+
+# development/analysis scripts
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+set_env.sh
+
+# features file
+features_c2v.csv
+*.csv
+*.arf
+*.xlsx
+*.pkl
+
+# data and proccessing dir
+/data/
+/features/
+/preprocessed/
+/scores*/
+
+# local and tools
+/local/
+.env
+.tool-version
+
+*.png
+*.cache

@@ -68,12 +68,16 @@ def plot_data():
                 st.form_submit_button(label="Apply Filters", type="primary")
 
             filters["type"] = st.multiselect("Type", unique_types, default=unique_types)
+        
+        age = st.slider("Select year up to:", df.age.min(), df.age.max(), df.age.max(),
+                        help="Select the year up to which you want to filter the data. Negative values are allowed and mean BC.")
 
     # main
     tab1_map, tab2_data = st.tabs(["Map", "Data"])
 
     with tab1_map:
         data = df[df.type.isin(filters["type"])]
+        data = data[data.age <= age]
         location = data[["lat", "lon"]].mean().values.tolist()
 
         # center on Liberty Bell, add marker
@@ -90,7 +94,7 @@ def plot_data():
         st_data = st_folium(m, width=725)
 
     with tab2_data:
-        st.write(df[["name", "type", "lat", "lon"]])
+        st.write(data[["name", "type", "lat", "lon", "century"]])
 
 
 if __name__ == "__main__":

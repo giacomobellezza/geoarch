@@ -91,7 +91,7 @@ def plot_data():
             ).add_to(m)
 
         # call to render Folium map in Streamlit
-        st_data = st_folium(m, width=725)
+        st_data = st_folium(m, width=1000)
 
     with tab2_data:
         st.write(data[["name", "type", "lat", "lon", "century"]])
